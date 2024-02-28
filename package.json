@@ -1,0 +1,23 @@
+{
+  "name": "electronjs-prompt",
+  "version": "1.0.0",
+  "description": "A Sync prompt that kinda copies the original prompt behavior for electronjs (untested outside of my laptop)",
+  "main": "_prompt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsukasaroot/_prompt.git"
+  },
+  "keywords": [
+    "electronjs",
+    "prompt"
+  ],
+  "author": "Tsukasaroot",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/tsukasaroot/_prompt/issues"
+  },
+  "homepage": "https://github.com/tsukasaroot/_prompt#readme"
+}

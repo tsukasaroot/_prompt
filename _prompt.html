@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <title>Prompt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const ipcRenderer = require('electron').ipcRenderer;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const submit = document.getElementById('submit');
+            const prompt = document.getElementById('prompt');
+
+            submit.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopImmediatePropagation();
+
+                ipcRenderer.send('prompt-reply-child', prompt.value);
+                window.close();
+            });
+        });
+
+    </script>
+    <label for="prompt"></label><input type="text" id="prompt" placeholder="Field name"/>
+    <button id="submit">Submit</button>
+</body>
+</html>

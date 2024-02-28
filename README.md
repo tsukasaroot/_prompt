@@ -27,3 +27,8 @@ async function loadMainWindow() {
     new Prompt(ipcMain);
 }
 ```
+
+You can then call prompt from your renderer using 
+```js
+return ipcRenderer.sendSync('prompt', msg);
+```

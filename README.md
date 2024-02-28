@@ -4,7 +4,8 @@ A Sync prompt that kinda copies the original prompt behavior for electronjs (unt
 # How to use
 Simply require it in main.js
 ```js
-const {Prompt} = require("./package/_prompt");```
+const {Prompt} = require("./package/_prompt");
+```
 
 Then call the constructor (there's no personalisations yet for the windows and design)
 ```js

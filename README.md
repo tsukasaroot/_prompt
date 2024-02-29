@@ -28,7 +28,11 @@ async function loadMainWindow() {
 }
 ```
 
-You can then call prompt from your renderer using 
+You can then call prompt from your renderer using
 ```js
 return ipcRenderer.sendSync('prompt', msg);
+```
+It now also works with confirm and sends back an integer (0 | 1)
+```js
+return ipcRenderer.sendSync('confirm', msg);
 ```

@@ -26,23 +26,27 @@
             const urlParams = new URLSearchParams(window.location.search);
             const title = urlParams.get('field_name');
             const submit = document.getElementById('form');
-            const prompt = document.getElementById('prompt');
 
-            prompt.placeholder = title;
+            submit.querySelector('[data-title]').innerText = title;
 
             submit.addEventListener('submit', (event) => {
                 event.preventDefault();
                 event.stopImmediatePropagation();
 
-                ipcRenderer.send('prompt-reply-child', prompt.value);
+                const confirmed = event.submitter.value;
+
+                ipcRenderer.send('confirm-reply-child', confirmed);
                 window.close();
             });
         });
 
     </script>
     <form method="post" id="form">
-        <label for="prompt"></label><input type="text" id="prompt" placeholder="Field name" required>
-        <button>Submit</button>
+        <div>
+            <p data-title></p>
+            <button value="1" name="confirm">Yes</button>
+            <button value="0" name="confirm">no</button>
+        </div>
     </form>
 </body>
 </html>

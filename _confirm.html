@@ -36,7 +36,6 @@
                 const confirmed = event.submitter.value;
 
                 ipcRenderer.send('confirm-reply-child', confirmed);
-                window.close();
             });
         });
 

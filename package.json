@@ -1,6 +1,6 @@
 {
   "name": "electronjs-prompt",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Sync prompt that kinda copies the original prompt behavior for electronjs (untested outside of my laptop)",
   "main": "_prompt.js",
   "scripts": {

@@ -1,13 +1,17 @@
 # _prompt
+
 A Sync prompt that kinda copies the original prompt behavior for electronjs (untested outside of my laptop)
 
 # How to use
+
 Simply require it in main.js
+
 ```js
 const {Prompt} = require("electronjs-prompt");
 ```
 
 Then call the constructor (there's no personalisations yet for the windows and design)
+
 ```js
 async function loadMainWindow() {
     win = new BrowserWindow({
@@ -24,15 +28,18 @@ async function loadMainWindow() {
         win.maximize();
     });
 
-    new Prompt(ipcMain);
+    new Prompt(ipcMain, win.webContents);
 }
 ```
 
 You can then call prompt from your renderer using
+
 ```js
 return ipcRenderer.sendSync('prompt', msg);
 ```
-It now also works with confirm and sends back an integer (0 | 1)
+
+It now also works with confirm and sends back a character (0 | 1)
+
 ```js
 return ipcRenderer.sendSync('confirm', msg);
 ```
